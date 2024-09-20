@@ -16,7 +16,7 @@ export default function ActionCard() {
                 </View>
                 <Image
                     source={{
-                        uri: 'https://miro.medium.com/v2/resize:fit:1400/1*QRyy7n9T0sYPTa4XMkmJvQ.png'
+                        uri: 'https://miro.medium.com/v2/resize:fit:680/1*TK3lUqXrmh82x3Mjb3Oa0A.png'
                     }}
                     style={styles.cardImage}
                 />
@@ -50,15 +50,52 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         paddingHorizontal: 8
     },
-    card: {},
-    elevatedCard: {},
-    headingContainer: {},
-    headerText: {},
-    cardImage: {
+    card: {
         width: 350,
-        height: 250,
+        height: 360,
+        borderRadius: 6,
+        marginVertical: 12,
+        marginHorizontal: 'auto',
     },
-    cardBody: {},
-    footerContainer: {},
-    socialLinks: {}
+    elevatedCard: {
+        backgroundColor: '#E07C24',
+        elevation: 3,
+        shadowOffset: {
+            width: 1,
+            height: 1,
+        },
+        shadowColor: '#333',
+        shadowOpacity: 0.4,
+    },
+    headingContainer: {
+        height: 40,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    headerText: {
+        color: '#000',
+        fontSize: 16,
+        fontWeight: '600'
+    },
+    cardImage: {
+        height: 190,
+    },
+    cardBody: {
+        padding: 10
+    },
+    footerContainer: {
+        padding: 8,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+    },
+    socialLinks: {
+        fontSize: 16,
+        color: '#000000',
+        backgroundColor: '#fff',
+        paddingHorizontal: 20,
+        paddingVertical: 6,
+        borderRadius: 6,
+    }
 })
