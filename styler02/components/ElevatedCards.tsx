@@ -7,22 +7,22 @@ export default function ElevatedCards() {
             <Text style={styles.headingText}>ElevatedCards</Text>
             <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.container}>
                 <View style={[styles.card, styles.cardElevated]}>
-                    <Text>Tap</Text>
+                    <Text style={styles.cardText}>Tap</Text>
                 </View>
                 <View style={[styles.card, styles.cardElevated]}>
-                    <Text>me</Text>
+                    <Text style={styles.cardText}>me</Text>
                 </View>
                 <View style={[styles.card, styles.cardElevated]}>
-                    <Text>to</Text>
+                    <Text style={styles.cardText}>to</Text>
                 </View>
                 <View style={[styles.card, styles.cardElevated]}>
-                    <Text>Scroll</Text>
+                    <Text style={styles.cardText}>Scroll</Text>
                 </View>
                 <View style={[styles.card, styles.cardElevated]}>
-                    <Text>more...</Text>
+                    <Text style={styles.cardText}>more...</Text>
                 </View>
                 <View style={[styles.card, styles.cardElevated]}>
-                    <Text>😊</Text>
+                    <Text style={styles.cardText}>😊</Text>
                 </View>
             </ScrollView>
         </View>
@@ -58,4 +58,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         shadowRadius: 2,
     },
+    cardText: {
+        color: "#000000"
+    }
 })
