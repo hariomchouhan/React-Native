@@ -1,18 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React, { useState } from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
@@ -25,94 +19,60 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const [randomBackground, setRandomBackground] = useState('#6374ae')
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const generateColor = () => {
+    const hexRange = "0123456789ABCDEF"
+    let color = "#"
 
+    for (let i = 0; i < 6; i++) {
+      color += hexRange[Math.floor(Math.random() * 16)]      
+    }
+    setRandomBackground(color)
+  }
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <StatusBar backgroundColor={`${randomBackground}`} />
+      <View style={[styles.container, {backgroundColor: randomBackground}]}>
+        <TouchableOpacity onPress={generateColor}>
+          <View style={styles.actionBtn}>
+            <Text style={styles.actionBtnText}>Click to change color</Text>
+          </View>
+        </TouchableOpacity>
+        <Text style={styles.hariom}>Hariॐ</Text>
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  sectionTitle: {
+  actionBtn: {
+    borderRadius: 12,
+    backgroundColor: '#e7f0f8',
+    paddingHorizontal: 40,
+    paddingVertical: 10,
+  },
+  actionBtnText: {
     fontSize: 24,
-    fontWeight: '600',
+    color: '#000000',
+    textTransform: 'uppercase',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+  hariom: {
+    position: 'absolute',
+    bottom: 10,
+    left: 20,
+    color: '#888888',
+    opacity: 0.6,
+    fontSize: 30,
+    fontWeight: "600",
+  }
 });
 
 export default App;
