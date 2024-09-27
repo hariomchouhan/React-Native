@@ -1,67 +1,82 @@
-import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
-import type { PropsWithChildren } from 'react'
+import { Animated, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
+import React, { useState, useRef } from 'react';
+import type { PropsWithChildren } from 'react';
 
-import DiceOne from '../assets/One.png'
-import DiceTwo from '../assets/Two.png'
-import DiceThree from '../assets/Three.png'
-import DiceFour from '../assets/Four.png'
-import DiceFive from '../assets/Five.png'
-import DiceSix from '../assets/Six.png'
+import DiceOne from '../assets/One.png';
+import DiceTwo from '../assets/Two.png';
+import DiceThree from '../assets/Three.png';
+import DiceFour from '../assets/Four.png';
+import DiceFive from '../assets/Five.png';
+import DiceSix from '../assets/Six.png';
 
 type DiceProps = PropsWithChildren<{
-  imageUrl: ImageSourcePropType
-}>
+  imageUrl: ImageSourcePropType;
+  fadeAnim: Animated.Value;
+}>;
 
-const Dice = ({ imageUrl }: DiceProps): JSX.Element => {
+const Dice = ({ imageUrl, fadeAnim }: DiceProps): JSX.Element => {
   return (
-    <View>
-      <Image style={styles.diceImage} source={imageUrl} />
-    </View>
-  )
-}
+    <Animated.View style={{ opacity: fadeAnim }}>
+      <Animated.Image style={styles.diceImage} source={imageUrl} />
+    </Animated.View>
+  );
+};
 
 export default function App(): JSX.Element {
-  const [diceImage, setDiceImage] = useState<ImageSourcePropType>(DiceOne)
+  const [diceImage, setDiceImage] = useState<ImageSourcePropType>(DiceOne);
+  const fadeAnim = useRef(new Animated.Value(1)).current; // Initial opacity is 1
 
   const rollDiceOnTap = () => {
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    // Start fade-out animation
+    Animated.timing(fadeAnim, {
+      toValue: 0, // Fade out to opacity 0
+      duration: 300, // 300ms for fade-out
+      useNativeDriver: true,
+    }).start(() => {
+      // After fade-out, change the image
+      let randomNumber = Math.floor(Math.random() * 6) + 1;
 
-    switch (randomNumber) {
-      case 1:
-        setDiceImage(DiceOne)
-        break;
-      case 2:
-        setDiceImage(DiceTwo)
-        break;
-      case 3:
-        setDiceImage(DiceThree)
-        break;
-      case 4:
-        setDiceImage(DiceFour)
-        break;
-      case 5:
-        setDiceImage(DiceFive)
-        break;
-      case 6:
-        setDiceImage(DiceSix)
-        break;
-    
-      default:
-        setDiceImage(DiceOne)
-        break;
-    }
-  }
+      switch (randomNumber) {
+        case 1:
+          setDiceImage(DiceOne);
+          break;
+        case 2:
+          setDiceImage(DiceTwo);
+          break;
+        case 3:
+          setDiceImage(DiceThree);
+          break;
+        case 4:
+          setDiceImage(DiceFour);
+          break;
+        case 5:
+          setDiceImage(DiceFive);
+          break;
+        case 6:
+          setDiceImage(DiceSix);
+          break;
+        default:
+          setDiceImage(DiceOne);
+          break;
+      }
+
+      // Start fade-in animation after image change
+      Animated.timing(fadeAnim, {
+        toValue: 1, // Fade in to opacity 1
+        duration: 300, // 300ms for fade-in
+        useNativeDriver: true,
+      }).start();
+    });
+  };
+
   return (
     <View style={styles.container}>
-      <Dice imageUrl={diceImage} />
-      <Pressable 
-      onPress={rollDiceOnTap}
-      >
+      <Dice imageUrl={diceImage} fadeAnim={fadeAnim} />
+      <Pressable onPress={rollDiceOnTap}>
         <Text style={styles.rollDiceBtnText}>Roll the Dice</Text>
       </Pressable>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -70,9 +85,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFF2F2',
-  },
-  diceContainer: {
-    margin: 12,
   },
   diceImage: {
     width: 200,
@@ -89,4 +101,4 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textTransform: 'uppercase',
   },
-})
+});
