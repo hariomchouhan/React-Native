@@ -75,6 +75,7 @@ export default function App(): JSX.Element {
       <Pressable onPress={rollDiceOnTap}>
         <Text style={styles.rollDiceBtnText}>Roll the Dice</Text>
       </Pressable>
+      <Text style={styles.hariom}>~ Hariॐ</Text>
     </View>
   );
 }
@@ -101,4 +102,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textTransform: 'uppercase',
   },
+  hariom: {
+    fontSize: 24,
+    color: '#000000',
+    opacity: 0.3,
+    fontWeight: "600",
+    position: "absolute",
+    bottom: 10,
+    left: 20,
+  }
 });
