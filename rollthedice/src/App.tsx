@@ -9,10 +9,18 @@ import DiceFour from '../assets/Four.png';
 import DiceFive from '../assets/Five.png';
 import DiceSix from '../assets/Six.png';
 
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
+
+
 type DiceProps = PropsWithChildren<{
   imageUrl: ImageSourcePropType;
   fadeAnim: Animated.Value;
 }>;
+
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
 
 const Dice = ({ imageUrl, fadeAnim }: DiceProps): JSX.Element => {
   return (
@@ -60,6 +68,8 @@ export default function App(): JSX.Element {
           break;
       }
 
+      ReactNativeHapticFeedback.trigger("impactLight", options);
+      
       // Start fade-in animation after image change
       Animated.timing(fadeAnim, {
         toValue: 1, // Fade in to opacity 1
