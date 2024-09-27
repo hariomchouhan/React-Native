@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
+  FlatList,
+  Pressable,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
+  TextInput,
   View,
 } from 'react-native';
 
@@ -33,7 +33,7 @@ function App(): React.JSX.Element {
     const inputAmount = parseFloat(inputValue)
     if (!isNaN(inputAmount)) {
       const convertedValue = inputAmount * targetValue.value
-      const result = `${targetValue.symbol} ${convertedValue.toFixed(2)}`
+      const result = `${targetValue.symbol} ${convertedValue.toFixed(2)} 🤑`
       setResultValue(result)
       setTargetCurrency(targetValue.name)
     } else {
@@ -45,25 +45,68 @@ function App(): React.JSX.Element {
     }
   }
   return (
-    <SafeAreaView>
-      <StatusBar
-      />
-      <View>
-        <Text>1</Text>
+    <>
+      <StatusBar />
+      <View style={styles.container}>
+        <View style={styles.topContainer}>
+          <View style={styles.rupeesContainer}>
+            <Text style={styles.rupee}>₹</Text>
+            <TextInput
+              maxLength={14}
+              value={inputValue}
+              clearButtonMode='always' // only for ios
+              onChangeText={setInputValue}
+              keyboardType='number-pad'
+              placeholder='Enter amount in Rupee'
+              style={styles.inputAmountField}
+            />
+          </View>
+          {resultValue && (
+            <Text style={styles.resultTxt}>
+              {resultValue}
+            </Text>
+          )}
+        </View>
+        <View style={styles.bottomContainer}>
+          <FlatList
+            numColumns={3}
+            data={currencyByRupee}
+            keyExtractor={item => item.name}
+            renderItem={({ item }) => (
+              <Pressable
+                style={[
+                  styles.button,
+                  targetCurrency === item.name && styles.selected
+                ]}
+                onPress={() => buttonPressed(item)}
+              >
+                <CurrencyButton {...item} />
+              </Pressable>
+            )}
+          />
+        <Text style={styles.hariom}>Hari ॐ</Text>
+        </View>
       </View>
-    </SafeAreaView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#515151',
+    backgroundColor: '#ebc034',
   },
   topContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    // Add shadow for iOS
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    // Add elevation for Android
+    elevation: 1,
   },
   resultTxt: {
     fontSize: 32,
@@ -87,19 +130,20 @@ const styles = StyleSheet.create({
     padding: 8,
     borderWidth: 1,
     borderRadius: 4,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#fef9c3',
+    fontSize: 17,
+    borderColor: '#737373',
+    color: '#ebc034'
   },
   bottomContainer: {
     flex: 3,
   },
   button: {
     flex: 1,
-
     margin: 12,
-    height: 60,
-
+    height: 70,
     borderRadius: 12,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     elevation: 2,
     shadowOffset: {
       width: 1,
@@ -112,6 +156,15 @@ const styles = StyleSheet.create({
   selected: {
     backgroundColor: '#ffeaa7',
   },
+  hariom: {
+    flex: 1,
+    color: '#000',
+    position: 'absolute',
+    bottom: 8,
+    left: 15,
+    fontSize: 35,
+    opacity: 0.3
+  }
 });
 
 export default App;

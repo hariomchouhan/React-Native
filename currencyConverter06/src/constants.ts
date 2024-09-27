@@ -54,3 +54,188 @@ export const currencyByRupee: Currency[] = [
       symbol: '₿',
     },
   ];
+
+
+
+// export const currencyByRupee: Currency[] = [
+//   {
+//     name: 'DOLLAR',
+//     value: 0.012271428,
+//     flag: '🇺🇸',
+//     symbol: '$',
+//   },
+//   {
+//     name: 'EURO',
+//     value: 0.01125809,
+//     flag: '🇪🇺',
+//     symbol: '€',
+//   },
+//   {
+//     name: 'POUND',
+//     value: 0.0099194378,
+//     flag: '🇬🇧',
+//     symbol: '£',
+//   },
+//   {
+//     name: 'RUBEL',
+//     value: 0.85040469,
+//     flag: '🇷🇺',
+//     symbol: '₽',
+//   },
+//   {
+//     name: 'AUS DOLLAR',
+//     value: 0.01732574,
+//     flag: '🇦🇺',
+//     symbol: 'A$',
+//   },
+//   {
+//     name: 'CAN DOLLAR',
+//     value: 0.016457908,
+//     flag: '🇨🇦',
+//     symbol: 'C$',
+//   },
+//   {
+//     name: 'YEN',
+//     value: 1.5909089,
+//     flag: '🇯🇵',
+//     symbol: '¥',
+//   },
+//   {
+//     name: 'DINAR',
+//     value: 0.0037446993,
+//     flag: '🇰🇼',
+//     symbol: 'KD',
+//   },
+//   {
+//     name: 'BITCOIN',
+//     value: 0.000000543544886,
+//     flag: '🎰',
+//     symbol: '₿',
+//   },
+//   {
+//     name: 'SWISS FRANC',
+//     value: 0.0106564,
+//     flag: '🇨🇭',
+//     symbol: 'CHF',
+//   },
+//   {
+//     name: 'SINGAPORE DOLLAR',
+//     value: 0.0167335,
+//     flag: '🇸🇬',
+//     symbol: 'S$',
+//   },
+//   {
+//     name: 'HONG KONG DOLLAR',
+//     value: 0.0955064,
+//     flag: '🇭🇰',
+//     symbol: 'HK$',
+//   },
+//   {
+//     name: 'UAE DIRHAM',
+//     value: 0.0450357,
+//     flag: '🇦🇪',
+//     symbol: 'AED',
+//   },
+//   {
+//     name: 'SOUTH KOREAN WON',
+//     value: 16.3654,
+//     flag: '🇰🇷',
+//     symbol: '₩',
+//   },
+//   {
+//     name: 'SOUTH AFRICAN RAND',
+//     value: 0.235472,
+//     flag: '🇿🇦',
+//     symbol: 'R',
+//   },
+//   {
+//     name: 'BRAZILIAN REAL',
+//     value: 0.059265,
+//     flag: '🇧🇷',
+//     symbol: 'R$',
+//   },
+//   {
+//     name: 'MEXICAN PESO',
+//     value: 0.212365,
+//     flag: '🇲🇽',
+//     symbol: 'MX$',
+//   },
+//   {
+//     name: 'MALAYSIAN RINGGIT',
+//     value: 0.057445,
+//     flag: '🇲🇾',
+//     symbol: 'RM',
+//   },
+//   {
+//     name: 'THAI BAHT',
+//     value: 0.43563,
+//     flag: '🇹🇭',
+//     symbol: '฿',
+//   },
+//   {
+//     name: 'NEW ZEALAND DOLLAR',
+//     value: 0.0185221,
+//     flag: '🇳🇿',
+//     symbol: 'NZ$',
+//   },
+//   {
+//     name: 'SWEDISH KRONA',
+//     value: 0.136576,
+//     flag: '🇸🇪',
+//     symbol: 'SEK',
+//   },
+//   {
+//     name: 'NORWEGIAN KRONE',
+//     value: 0.1298,
+//     flag: '🇳🇴',
+//     symbol: 'NOK',
+//   },
+//   {
+//     name: 'DANISH KRONE',
+//     value: 0.0836,
+//     flag: '🇩🇰',
+//     symbol: 'DKK',
+//   },
+//   {
+//     name: 'INDONESIAN RUPIAH',
+//     value: 187.4395,
+//     flag: '🇮🇩',
+//     symbol: 'IDR',
+//   },
+//   {
+//     name: 'PHILIPPINE PESO',
+//     value: 0.6925,
+//     flag: '🇵🇭',
+//     symbol: '₱',
+//   },
+//   {
+//     name: 'VIETNAMESE DONG',
+//     value: 297.6568,
+//     flag: '🇻🇳',
+//     symbol: '₫',
+//   },
+//   {
+//     name: 'PAKISTANI RUPEE',
+//     value: 3.6734,
+//     flag: '🇵🇰',
+//     symbol: '₨',
+//   },
+//   {
+//     name: 'BANGLADESHI TAKA',
+//     value: 1.3485,
+//     flag: '🇧🇩',
+//     symbol: '৳',
+//   },
+//   {
+//     name: 'EGYPTIAN POUND',
+//     value: 0.37754,
+//     flag: '🇪🇬',
+//     symbol: '£E',
+//   },
+//   {
+//     name: 'NIGERIAN NAIRA',
+//     value: 9.4283,
+//     flag: '🇳🇬',
+//     symbol: '₦',
+//   },
+// ];
