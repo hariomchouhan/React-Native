@@ -11,8 +11,9 @@ import {
   View,
 } from 'react-native';
 import { addTrack, setupPlayer } from '../musicPlayerServices';
+import MusicPlayer from './screens/MusicPlayer';
 
-function App(): React.JSX.Element {
+function App(): JSX.Element {
   const [isPlayerReady, setIsPlayerReady] = useState(false)
 
   async function setup() {
@@ -37,11 +38,10 @@ function App(): React.JSX.Element {
   }
   
   return (
-    <SafeAreaView>
-      <StatusBar
-      />
-      <Text>Hariom Chouhan</Text>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <StatusBar barStyle={'light-content'} />
+      <MusicPlayer />
+    </View>
   );
 }
 
