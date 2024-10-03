@@ -19,6 +19,11 @@ const Home = ({navigation}: HomeProps) => {
 
       // onPress={() => navigation.navigate("Details")}
 
+      // .replace() is replace the all screens with this screen and don't go back with this screen
+      // onPress={() => navigation.replace("Details", {
+      //   productId: "86"
+      // })}  
+
       onPress={() => navigation.push("Details", {
         productId: "86"
       })}
