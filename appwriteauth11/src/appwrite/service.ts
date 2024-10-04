@@ -40,7 +40,6 @@ class AppwriteService {
                 name,
             )
             if (userAccount) {
-                // TODO: create login feature
                 return this.login({email, password})
             } else {
                 return userAccount
