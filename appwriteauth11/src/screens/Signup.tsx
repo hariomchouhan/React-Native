@@ -1,16 +1,11 @@
 import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useContext, useState } from 'react'
 
-// React Native Elements
-import { FAB } from '@rneui/themed'
-
 // Snackbar
 import Snackbar from 'react-native-snackbar'
 
 // Context API
 import AppwriteContext from '../appwrite/AppwriteContext'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { Image } from '@rneui/base'
 
 // Navigation
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
@@ -18,7 +13,7 @@ import { AuthStackParamList } from '../routes/AuthStack'
 
 type SignupScreenProps = NativeStackScreenProps<AuthStackParamList, 'Signup'>
 
-const Signup = ({navigation}: SignupScreenProps) => {
+const Signup = ({ navigation }: SignupScreenProps) => {
   const { appwrite, setIsLoggedIn } = useContext(AppwriteContext)
 
   const [error, setError] = useState<string>('')
@@ -63,83 +58,83 @@ const Signup = ({navigation}: SignupScreenProps) => {
   }
   return (
     <KeyboardAvoidingView
-    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    style={styles.container}>
-    <View style={styles.formContainer}>
-      <Text style={styles.appName}>Appwrite Auth</Text>
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}>
+      <View style={styles.formContainer}>
+        <Text style={styles.appName}>Appwrite Auth</Text>
 
-      {/* Name */}
-      <TextInput
-        value={name}
-        onChangeText={text => {
-          setError('');
-          setName(text);
-        }}
-        placeholderTextColor={'#AEAEAE'}
-        placeholder="Name"
-        style={styles.input}
-      />
+        {/* Name */}
+        <TextInput
+          value={name}
+          onChangeText={text => {
+            setError('');
+            setName(text);
+          }}
+          placeholderTextColor={'#AEAEAE'}
+          placeholder="Name"
+          style={styles.input}
+        />
 
-      {/* Email */}
-      <TextInput
-        value={email}
-        keyboardType="email-address"
-        onChangeText={text => {
-          setError('');
-          setEmail(text);
-        }}
-        placeholderTextColor={'#AEAEAE'}
-        placeholder="Email"
-        style={styles.input}
-      />
+        {/* Email */}
+        <TextInput
+          value={email}
+          keyboardType="email-address"
+          onChangeText={text => {
+            setError('');
+            setEmail(text);
+          }}
+          placeholderTextColor={'#AEAEAE'}
+          placeholder="Email"
+          style={styles.input}
+        />
 
-      {/* Password */}
-      <TextInput
-        value={password}
-        onChangeText={text => {
-          setError('');
-          setPassword(text);
-        }}
-        placeholderTextColor={'#AEAEAE'}
-        placeholder="Password"
-        secureTextEntry
-        style={styles.input}
-      />
+        {/* Password */}
+        <TextInput
+          value={password}
+          onChangeText={text => {
+            setError('');
+            setPassword(text);
+          }}
+          placeholderTextColor={'#AEAEAE'}
+          placeholder="Password"
+          secureTextEntry
+          style={styles.input}
+        />
 
-      {/* Repeat password */}
-      <TextInput
-        secureTextEntry
-        value={repeatPassword}
-        onChangeText={text => {
-          setError('');
-          setRepeatPassword(text);
-        }}
-        placeholderTextColor={'#AEAEAE'}
-        placeholder="Repeat Password"
-        style={styles.input}
-      />
+        {/* Repeat password */}
+        <TextInput
+          secureTextEntry
+          value={repeatPassword}
+          onChangeText={text => {
+            setError('');
+            setRepeatPassword(text);
+          }}
+          placeholderTextColor={'#AEAEAE'}
+          placeholder="Repeat Password"
+          style={styles.input}
+        />
 
-      {/* Validation error */}
-      {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        {/* Validation error */}
+        {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-      {/* Signup button */}
-      <Pressable
-        onPress={handleSignup}
-        style={[styles.btn, {marginTop: error ? 10 : 20}]}>
-        <Text style={styles.btnText}>Sign Up</Text>
-      </Pressable>
+        {/* Signup button */}
+        <Pressable
+          onPress={handleSignup}
+          style={[styles.btn, { marginTop: error ? 10 : 20 }]}>
+          <Text style={styles.btnText}>Sign Up</Text>
+        </Pressable>
 
-      {/* Login navigation */}
-      <Pressable
-        onPress={() => navigation.navigate('Login')}
-        style={styles.loginContainer}>
-        <Text style={styles.haveAccountLabel}>
-          Already have an account?{'  '}
-          <Text style={styles.loginLabel}>Login</Text>
-        </Text>
-      </Pressable>
-    </View>
-  </KeyboardAvoidingView>
+        {/* Login navigation */}
+        <Pressable
+          onPress={() => navigation.navigate('Login')}
+          style={styles.loginContainer}>
+          <Text style={styles.haveAccountLabel}>
+            Already have an account?{'  '}
+            <Text style={styles.loginLabel}>Login</Text>
+          </Text>
+        </Pressable>
+      </View>
+    </KeyboardAvoidingView>
   )
 }
 
