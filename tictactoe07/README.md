@@ -8,7 +8,7 @@ This mobile Tic Tac Toe game allows two players to take turns, with the current 
 1. Clone the repository to your local machine.
 
 ```bash
-  git clone https://github.com/hariomchouhan/React-Native/tree/main/tictactoe07
+  git clone https://github.com/hariomchouhan/React-Native/
 ```
 
 2. Install the required packages.
