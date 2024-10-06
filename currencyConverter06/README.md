@@ -9,7 +9,7 @@ This mobile app converts Indian Rupees to various global currencies, including U
 1. Clone the repository to your local machine.
 
 ```bash
-  git clone https://github.com/hariomchouhan/React-Native/tree/main/currencyConverter06
+  git clone https://github.com/hariomchouhan/React-Native/
 ```
 
 2. Install the required packages.
