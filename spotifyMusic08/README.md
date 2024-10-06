@@ -7,7 +7,7 @@ This React Native project replicates a Spotify-like music player with a modern i
 1. Clone the repository to your local machine.
 
 ```bash
-   git clone https://github.com/hariomchouhan/React-Native/tree/main/spotifyMusic08
+   git clone https://github.com/hariomchouhan/React-Native/
 ```
 
 2. Install the required packages.
