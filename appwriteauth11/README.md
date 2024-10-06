@@ -1,79 +1,57 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# React Native Appwrite Authentication
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This is a simple React Native app that demonstrates user authentication using **Appwrite** with email and password. The app provides the following features:
 
-## Step 1: Start the Metro Server
+- **Signup**: Users can create an account by providing their name, email, password, and repeating the password.
+- **Login**: Users can log in using their email and password.
+- **Home Screen**: After logging in, the app displays user details like name and email on the home screen.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-To start Metro, run the following command from the _root_ of your React Native project:
 
-```bash
-# using npm
-npm start
+## Features
 
-# OR using Yarn
-yarn start
-```
+- Email and Password Authentication using Appwrite
+- Signup with name, email, password, and repeat password
+- Login with email and password
+- Protected routes to show user details after authentication
+- Logout functionality
+## Installation
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+1. Clone the repository to your local machine.
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+   git clone https://github.com/hariomchouhan/React-Native
 ```
 
-### For iOS
+2. Install the required packages.
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+  cd appwriteauth11
+  npm install
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+3. Start the development server.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+ npx react-native run-andriod
+```
 
-## Step 3: Modifying your App
+## Screens
 
-Now that you have successfully run the app, let's modify it.
+1. **Login Screen**  
+   ![Login Screen](https://github.com/user-attachments/assets/6f6e8531-211a-4e88-81fa-3bc3bb2ea272)
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+2. **Signup Screen**  
+   ![Signup Screen](https://github.com/user-attachments/assets/c6819d8f-07e5-4f56-862f-bade27a104b7)
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+3. **Home Screen**  
+   ![Home Screen](https://github.com/user-attachments/assets/5c2f8788-47bb-4e6d-bb79-b5534a832102)
 
-## Congratulations! :tada:
+4. **Video in flow**
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![App Screenshot](https://github.com/user-attachments/assets/5c675a7e-ec58-4fff-9824-2f04d58967fe)
+## Tech Stack
+- **React Native**: Frontend framework
+- **Appwrite**: Authentication service
+- **React Navigation**: For handling navigation and routes
