@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/color'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { fontSize } from '../constants/dimensions';
 
 const HomeHeader = () => {
     return (
@@ -10,11 +11,11 @@ const HomeHeader = () => {
                 <Image style={styles.profilePic} source={require('../assets/images/profileImage.png')} />
             </View>
             <View style={styles.location}>
-                <Icon name="location" size={18} color="green" />
+                <Icon name="location" size={12} color="green" />
                 <Text style={styles.locationText}>Jakarta, Indonesia</Text>
             </View>
             <View>
-                <Icon name="notifications-outline" size={24} color="green" style={styles.notificationIcon} />
+                <Icon name="notifications-outline" size={26} color="green" style={styles.notificationIcon} />
             </View>
         </View>
     )
@@ -30,8 +31,8 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     profilePic: {
-        width: 40,
-        height: 40,
+        width: 37,
+        height: 37,
         borderRadius: 20,
     },
     location: {
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     locationText: {
         marginLeft: 5,
         color: colors.black,
+        fontSize: 12,
     },
     notificationIcon: {
         marginLeft: 'auto',
