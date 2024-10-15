@@ -4,6 +4,7 @@ import HomeHeader from '../components/HomeHeader';
 import { colors } from '../constants/color';
 import { fontSize } from '../constants/dimensions';
 import { customFontFamily } from '../constants/font';
+import SearchBar from '../components/SearchBar';
 
 const HomeScreen = () => {
     return (
@@ -13,6 +14,9 @@ const HomeScreen = () => {
 
             {/* Greeting Section */}
             <Text style={styles.greeting}>Good morning, Yudi</Text>
+
+            {/* Search Bar */}
+            <SearchBar />
         </View>
     );
 };
