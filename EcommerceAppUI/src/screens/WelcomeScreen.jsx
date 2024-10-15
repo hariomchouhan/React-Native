@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import BackgroundImageSource from '../assets/images/backgroundImage.png';
-import { customFontFamily, fontFamily } from '../constants/font';
+import { customFontFamily } from '../constants/font';
 import { fontSize } from '../constants/dimensions';
 import { colors } from '../constants/color';
 

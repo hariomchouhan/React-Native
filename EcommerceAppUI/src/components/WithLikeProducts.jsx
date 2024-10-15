@@ -5,12 +5,12 @@ import { customFontFamily } from '../constants/font';
 import { colors } from '../constants/color';
 
 const products = [
-    { id: '1', name: 'Cappuccino', isLike: true, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino1.png') },
-    { id: '2', name: 'Coffee', isLike: false, productType: 'Without Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
-    { id: '3', name: 'Cappuccino', isLike: true, productType: 'Without Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino3.png') },
-    { id: '4', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino1.png') },
-    { id: '5', name: 'Coffee', isLike: true, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
-    { id: '6', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino3.png') },
+    { id: '11', name: 'Cappuccino', isLike: true, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino1.png') },
+    { id: '12', name: 'Coffee', isLike: false, productType: 'Without Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
+    { id: '13', name: 'Cappuccino', isLike: true, productType: 'Without Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino3.png') },
+    { id: '14', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino1.png') },
+    { id: '15', name: 'Coffee', isLike: true, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
+    { id: '16', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino3.png') },
 ];
 
 const WithLikeProducts = () => {
