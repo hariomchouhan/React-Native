@@ -5,6 +5,7 @@ import { colors } from '../constants/color';
 import { fontSize } from '../constants/dimensions';
 import { customFontFamily } from '../constants/font';
 import SearchBar from '../components/SearchBar';
+import Categories from '../components/Categories';
 
 const HomeScreen = () => {
     return (
@@ -17,6 +18,11 @@ const HomeScreen = () => {
 
             {/* Search Bar */}
             <SearchBar />
+
+            {/* Categories Section */}
+            <Text style={styles.categoryHeading}>Categories</Text>
+            <Categories />
+
         </View>
     );
 };
@@ -33,6 +39,15 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         marginHorizontal: 20,
         marginTop: 10,
+        color: colors.black,
+        fontFamily: customFontFamily.SemiBold,
+    },
+    categoryHeading: {
+        fontSize: 14,
+        fontWeight: '600',
+        marginHorizontal: 20,
+        marginTop: 10,
+        marginBottom: 10,
         color: colors.black,
         fontFamily: customFontFamily.SemiBold,
     },
