@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import HomeHeader from '../components/HomeHeader';
 import { colors } from '../constants/color';
-import { fontSize } from '../constants/dimensions';
 import { customFontFamily } from '../constants/font';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
+import Products from '../components/Products';
 
 const HomeScreen = () => {
     return (
@@ -23,6 +23,8 @@ const HomeScreen = () => {
             <Text style={styles.categoryHeading}>Categories</Text>
             <Categories />
 
+            {/* Products Section */}
+            <Products />
         </View>
     );
 };
@@ -50,5 +52,14 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         color: colors.black,
         fontFamily: customFontFamily.SemiBold,
+    },
+    // productContainer: {
+    //     flex: 1
+    // },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: '600',
+        marginHorizontal: 20,
+        marginTop: 20,
     },
 });

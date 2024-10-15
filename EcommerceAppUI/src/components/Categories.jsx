@@ -12,14 +12,16 @@ const categories = [
 
 const Categories = () => {
     return (
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.categoriesScroll}>
-            {categories.map((category, index) => (
-                <TouchableOpacity key={index} style={[styles.categoryButton, { backgroundColor: index === 0 ? 'green' : 'white' }]} >
-                    <Feather name="coffee" size={18} color={index === 0 ? 'white' : 'green'} style={styles.categoriesIcon} />
-                    <Text style={[styles.categoryText, { color: index === 0 ? 'white' : 'green' }]}>{category.name}</Text>
-                </TouchableOpacity>
-            ))}
-        </ScrollView>
+        <View style={styles.container}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.categoriesScroll}>
+                {categories.map((category, index) => (
+                    <TouchableOpacity key={index} style={[styles.categoryButton, { backgroundColor: index === 0 ? 'green' : 'white' }]} >
+                        <Feather name="coffee" size={18} color={index === 0 ? 'white' : 'green'} style={styles.categoriesIcon} />
+                        <Text style={[styles.categoryText, { color: index === 0 ? 'white' : 'green' }]}>{category.name}</Text>
+                    </TouchableOpacity>
+                ))}
+            </ScrollView>
+        </View>
     )
 }
 
@@ -29,13 +31,14 @@ const styles = StyleSheet.create({
     categoriesScroll: {
         marginHorizontal: 20,
         marginTop: 10,
+        paddingBottom: 20,
     },
     categoryButton: {
         width: 112,
         height: 38,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 10,
+        paddingVertical: 5,
         paddingHorizontal: 15,
         backgroundColor: '#F3F3F3',
         borderRadius: 20,
@@ -55,6 +58,5 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         fontSize: 10,
         fontFamily: customFontFamily.SemiBold,
-
     },
 })
