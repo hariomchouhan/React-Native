@@ -25,7 +25,7 @@ const WelcomeScreen = ({ navigation }) => {
                 style={styles.btn}
                 onPress={() => {
                     console.log('Hariom');
-                    navigation.navigate("Home")
+                    navigation.replace("Home")
                 }}>
                 <Text style={styles.btnText}>Get started</Text>
             </TouchableOpacity>

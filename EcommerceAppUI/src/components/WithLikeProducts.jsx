@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { customFontFamily } from '../constants/font';
@@ -11,11 +11,15 @@ const products = [
     { id: '14', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino1.png') },
     { id: '15', name: 'Coffee', isLike: true, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
     { id: '16', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino3.png') },
+    { id: '17', name: 'Coffee', isLike: false, productType: 'Without Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
+    { id: '18', name: 'Cappuccino', isLike: true, productType: 'Without Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino3.png') },
+    { id: '19', name: 'Cappuccino', isLike: false, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/cappuccino1.png') },
+    { id: '20', name: 'Coffee', isLike: true, productType: 'With Sugar', price: '50.000', currencySymbol: 'Rp', image: require('../assets/productImage/coffee1.png') },
 ];
 
 const WithLikeProducts = () => {
     return (
-        <View>
+        <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={true}>
             <FlatList
                 data={products}
                 keyExtractor={(item) => item.id}
@@ -54,7 +58,7 @@ const WithLikeProducts = () => {
                     </View>
                 )}
             />
-        </View>
+        </ScrollView>
     )
 }
 

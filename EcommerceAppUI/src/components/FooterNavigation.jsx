@@ -3,14 +3,24 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { colors } from '../constants/color';
+import { useNavigation } from '@react-navigation/native';
 
 const FooterNavigation = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.bottomNavigation}>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={() => {
+                navigation.navigate("Home")
+            }}
+            >
                 <Entypo name="home" size={28} color="green" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={() => {
+                navigation.navigate("Favorite")
+            }}
+            >
                 <Icon name="heart-outline" size={28} color="gray" />
             </TouchableOpacity>
             <TouchableOpacity>
