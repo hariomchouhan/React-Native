@@ -5,7 +5,7 @@ import { customFontFamily } from '../constants/font';
 import { fontSize } from '../constants/dimensions';
 import { colors } from '../constants/color';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
     return (
         <ImageBackground
             source={BackgroundImageSource}
@@ -21,7 +21,12 @@ const WelcomeScreen = () => {
             <Text style={styles.desc}>The best grain, the finest roast, the most powerful flavor.</Text>
 
             {/* Custom Button */}
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity
+                style={styles.btn}
+                onPress={() => {
+                    console.log('Hariom');
+                    navigation.navigate("Home")
+                }}>
                 <Text style={styles.btnText}>Get started</Text>
             </TouchableOpacity>
         </ImageBackground>
