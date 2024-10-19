@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         paddingBottom: 80,
-        overflow: 'scroll',
+        // overflow: 'scroll',
     },
     heading: {
         fontSize: 14,

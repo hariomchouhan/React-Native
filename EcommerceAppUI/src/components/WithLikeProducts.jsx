@@ -1,4 +1,4 @@
-import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { customFontFamily } from '../constants/font';
@@ -19,7 +19,7 @@ const products = [
 
 const WithLikeProducts = () => {
     return (
-        <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={true}>
+        <>
             <FlatList
                 data={products}
                 keyExtractor={(item) => item.id}
@@ -58,7 +58,7 @@ const WithLikeProducts = () => {
                     </View>
                 )}
             />
-        </ScrollView>
+            </>
     )
 }
 
