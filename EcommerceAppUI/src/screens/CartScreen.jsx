@@ -1,19 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import { colors } from '../constants/color';
 import { customFontFamily } from '../constants/font';
-import WithLikeProducts from '../components/WithLikeProducts';
 import FooterNavigation from '../components/FooterNavigation';
+import CartProducts from '../components/CartProducts';
 
-const FavoriteScreen = () => {
+const CartScreen = () => {
     return (
         <View style={styles.container}>
             {/* Scrollable Content */}
-            {/* <ScrollView contentContainerStyle={styles.scrollContainer}> */}
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
                 {/* Special Offer Section */}
-                <Text style={styles.heading}>Favorite</Text>
-                <WithLikeProducts />
-            {/* </ScrollView> */}
+                <Text style={styles.heading}>Cart</Text>
+                <CartProducts />
+            </ScrollView>
 
             {/* Fixed Footer Navigation */}
             <FooterNavigation />
@@ -21,17 +21,13 @@ const FavoriteScreen = () => {
     );
 };
 
-export default FavoriteScreen;
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: '#FFF',
-        // overflow: 'scroll'
+        backgroundColor: '#FFF',
     },
     scrollContainer: {
         paddingBottom: 80,
-        // overflow: 'scroll',
     },
     heading: {
         fontSize: 14,
@@ -43,3 +39,6 @@ const styles = StyleSheet.create({
         fontFamily: customFontFamily.SemiBold,
     },
 });
+
+export default CartScreen;
+

@@ -21,6 +21,7 @@ const WithLikeProducts = () => {
     return (
         <>
             <FlatList
+                scrollEnabled={true}
                 data={products}
                 keyExtractor={(item) => item.id}
                 numColumns={2}
@@ -58,7 +59,7 @@ const WithLikeProducts = () => {
                     </View>
                 )}
             />
-            </>
+        </>
     )
 }
 

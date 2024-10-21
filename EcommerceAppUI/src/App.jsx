@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import WelcomeScreen from './screens/WelcomeScreen';
 import HomeScreen from './screens/HomeScreen';
 import FavoriteScreen from './screens/FavoriteScreen';
+import CartScreen from './screens/CartScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,8 +23,9 @@ const App = () => {
                 }}
             >
                 {/* <Stack.Screen name="Welcome" component={WelcomeScreen} /> */}
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Favorite" component={FavoriteScreen} />
+                {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+                {/* <Stack.Screen name="Favorite" component={FavoriteScreen} /> */}
+                <Stack.Screen name="Cart" component={CartScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

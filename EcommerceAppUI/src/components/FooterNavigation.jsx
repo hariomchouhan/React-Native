@@ -23,7 +23,11 @@ const FooterNavigation = () => {
             >
                 <Icon name="heart-outline" size={28} color="gray" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={() => {
+                navigation.navigate("Cart")
+            }}
+            >
                 <Icon name="cart-outline" size={28} color="gray" />
             </TouchableOpacity>
             <TouchableOpacity>
