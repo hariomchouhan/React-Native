@@ -4,6 +4,7 @@ import { colors } from '../constants/color';
 import { customFontFamily } from '../constants/font';
 import FooterNavigation from '../components/FooterNavigation';
 import CartProducts from '../components/CartProducts';
+import CartSummary from '../components/CartSummary';
 
 const CartScreen = () => {
     return (
@@ -13,6 +14,7 @@ const CartScreen = () => {
                 {/* Special Offer Section */}
                 <Text style={styles.heading}>Cart</Text>
                 <CartProducts />
+                <CartSummary />
             </ScrollView>
 
             {/* Fixed Footer Navigation */}
@@ -28,6 +30,7 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         paddingBottom: 80,
+        width: 380,
     },
     heading: {
         fontSize: 14,
