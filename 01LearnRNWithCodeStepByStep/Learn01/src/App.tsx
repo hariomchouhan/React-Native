@@ -2,6 +2,7 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ButtonAndOnPress from './Components/ButtonAndOnPress'
 import LinearGradient from 'react-native-linear-gradient';
+import StateinRN from './Components/StateinRN';
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
     >
       {/* Button and onPress event */}
       <ButtonAndOnPress />
+
+      {/* State */}
+      <StateinRN />
 
     </LinearGradient>
   )
